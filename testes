@@ -1,0 +1,38 @@
+# Criando um Banco de Dados de Clientes
+CREATE SCHEMA loja
+CREATE TABLE tbcliente
+(CPF VARCHAR (11) NOT NULL,
+NOME VARCHAR (100) NOT NULL,
+ENDERECO1 VARCHAR (150) NOT NULL,
+ENDEREÇO2 VARCHAR (150),
+BAIRRO VARCHAR (50) NOT NULL,
+CIDADE VARCHAR (50) NOT NULL,
+UF VARCHAR (2) NOT NULL,
+CEP VARCHAR (8) NOT NULL,
+DATA_NASCIMENTO DATE NOT NULL,
+IDADE SMALLINT NOT NULL,
+SEXO VARCHAR (1) NOT NULL,
+LIMITE_CREDITO FLOAT,
+VOLUME_COMPRA FLOAT,
+PRIMARY KEY (CPF));
+
+# Inserindo dados
+INSERT INTO tbcliente VALUES ('111.111.111-11', 'Don Pedro Primeiro',
+'Rua do Ipiranga', null, 'Alvorada', 'Brasilia', 'RJ', 1815-01-01, 100, 
+'M', NULL, NULL);
+
+INSERT INTO tbcliente VALUES ('222.222.222-22', 'Maria Joaquina',
+'Rua do Ipiranga', null, 'Alvorada', 'Brasilia', 'RJ', 1815-01-01, 100, 
+'M', NULL, NULL);
+
+INSERT INTO tbcliente VALUES ('333.333.333-33', 'Maria Antonieta',
+'Rua do Ipiranga', null, 'Alvorada', 'Brasilia', 'RJ', 1815-01-01, 100, 
+'M', NULL, NULL);
+
+# Deletando dados
+DELETE FROM tbclientes WHERE CPF = '222.222.222-22';
+
+# Pesquisando os dados
+SELECT * FROM tbclientes;
+SELECT * FROM tbclientes WHERE SEXO == 'M';
+SELECT * FROM tbclientes WHERE SEXO == 'M' AND UF == 'RJ';
