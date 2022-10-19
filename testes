@@ -22,11 +22,11 @@ INSERT INTO tbcliente VALUES ('111.111.111-11', 'Don Pedro Primeiro',
 'M', NULL, NULL);
 
 INSERT INTO tbcliente VALUES ('222.222.222-22', 'Maria Joaquina',
-'Rua do Ipiranga', null, 'Nova Iguaçu', 'Brasilia', 'RJ', 1815-01-01, 95, 
+'Rua do iPê', null, 'Nova Iguaçu', 'Brasilia', 'RJ', 1815-01-01, 95, 
 'F', NULL, NULL);
 
 INSERT INTO tbcliente VALUES ('333.333.333-33', 'Maria Antonieta',
-'Rua do Ipiranga', null, 'Fernando de Noronha', 'Brasilia', 'RJ', 1815-01-01, 90, 
+'Rua das flores', null, 'Fernando de Noronha', 'Brasilia', 'RJ', 1815-01-01, 90, 
 'F', NULL, NULL);
 
 # Deletando dados
@@ -43,3 +43,4 @@ SELECT * FROM tbclientes WHERE SEXO = 'F' OR CIDADE == 'RJ';
 SELECT * FROM tbclientes WHERE NOT CIDADE = 'RJ';
 SELECT * FROM tbclientes WHERE BAIRRO IN ('Alvorada');
 SELECT * FROM tbclientes WHERE SEXO = 'M' AND IDADE >= 50 NOT IN (CIDADE = 'BRASILIA');
+SELECT * FROM tbclientes WHERE CIDADE LIKE '%fl%';
