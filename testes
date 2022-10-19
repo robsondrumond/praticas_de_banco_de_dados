@@ -22,17 +22,24 @@ INSERT INTO tbcliente VALUES ('111.111.111-11', 'Don Pedro Primeiro',
 'M', NULL, NULL);
 
 INSERT INTO tbcliente VALUES ('222.222.222-22', 'Maria Joaquina',
-'Rua do Ipiranga', null, 'Alvorada', 'Brasilia', 'RJ', 1815-01-01, 100, 
-'M', NULL, NULL);
+'Rua do Ipiranga', null, 'Nova Iguaçu', 'Brasilia', 'RJ', 1815-01-01, 95, 
+'F', NULL, NULL);
 
 INSERT INTO tbcliente VALUES ('333.333.333-33', 'Maria Antonieta',
-'Rua do Ipiranga', null, 'Alvorada', 'Brasilia', 'RJ', 1815-01-01, 100, 
-'M', NULL, NULL);
+'Rua do Ipiranga', null, 'Fernando de Noronha', 'Brasilia', 'RJ', 1815-01-01, 90, 
+'F', NULL, NULL);
 
 # Deletando dados
 DELETE FROM tbclientes WHERE CPF = '222.222.222-22';
 
 # Pesquisando os dados
 SELECT * FROM tbclientes;
-SELECT * FROM tbclientes WHERE SEXO == 'M';
-SELECT * FROM tbclientes WHERE SEXO == 'M' AND UF == 'RJ';
+SELECT * FROM tbclientes WHERE SEXO = 'M';
+SELECT * FROM tbclientes WHERE SEXO = 'M' AND UF = 'RJ';
+
+# Pesquisando os dados com condições lógicas
+SELECT * FROM tbclientes WHERE IDADE > 50 AND < 100;
+SELECT * FROM tbclientes WHERE SEXO = 'F' OR CIDADE == 'RJ';
+SELECT * FROM tbclientes WHERE NOT CIDADE = 'RJ';
+SELECT * FROM tbclientes WHERE BAIRRO IN ('Alvorada');
+SELECT * FROM tbclientes WHERE SEXO = 'M' AND IDADE >= 50 NOT IN (CIDADE = 'BRASILIA');
